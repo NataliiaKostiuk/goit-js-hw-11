@@ -32,7 +32,8 @@ form.addEventListener('submit', getImages);
         const name = form.searchQuery.value;
      if (name !== '') {
           fetchImages(name)
-             .then((resp) => {
+              .then((resp) => {
+                 form.reset()
                  createMarkup(resp.data);
        Notiflix.Notify.info(`Hooray! We found ${resp.data.totalHits} images.`)
                  const totalPage = Math.ceil(resp.data.totalHits / limit);
@@ -42,7 +43,7 @@ form.addEventListener('submit', getImages);
              })
               .catch((err) => {
                  console.log(err);
-                    Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+                  Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
              })
          
      } 
