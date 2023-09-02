@@ -15,7 +15,7 @@ const simpleLightBox = new SimpleLightbox('.gallery a', {
 
 
 const limit = 40;
-let page = 12;
+let page = 1;
 const options = {
   root: null,
   rootMargin: '300px',
